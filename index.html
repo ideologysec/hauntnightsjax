@@ -141,7 +141,9 @@
         @keyframes fadeSlideUp { from{opacity:0;transform:translateY(25px)} to{opacity:1;transform:translateY(0)} }
         @keyframes fadeSlideDown { from{opacity:0;transform:translateY(-15px) rotate(-2deg)} to{opacity:1;transform:translateY(0) rotate(-2deg)} }
         @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+        .mobile-break { display: none; }
         @media (max-width: 480px) {
+            .mobile-break { display: block; }
             .tape { padding: 0.3rem 1rem; font-size: 0.6rem; }
             .title { width: auto; font-size: clamp(4rem, 18vw, 6rem); line-height: 0.95; }
             .message { padding: 0 1rem; }
@@ -160,7 +162,7 @@
         <h1 class="title" data-text="Haunt Nights">Haunt Nights</h1>
         <div class="subtitle">Jacksonville, FL</div>
         <div class="divider"></div>
-        <div class="announcement">Not April Fools — We're Back!</div>
+        <div class="announcement">Not April Fools —<br class="mobile-break"> We're Back!</div>
         <div class="divider"></div>
         <p class="message">
             We're building something <strong>terrifying</strong>.<br>
