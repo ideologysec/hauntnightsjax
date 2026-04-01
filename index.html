@@ -95,24 +95,35 @@
             animation: fadeSlideUp 1s ease-out 1.3s both; letter-spacing: 0.03em;
         }
         .message strong { color: var(--blood); font-weight: normal; text-shadow: 0 0 15px rgba(204,0,0,0.4); }
-        .cta {
+        .cta, .cta-primary {
             display: inline-block; font-size: 0.75rem; letter-spacing: 0.25em;
-            text-transform: uppercase; color: rgba(200,192,180,0.55);
-            border: 1px solid rgba(139,0,0,0.5); padding: 0.7rem 2rem;
+            text-transform: uppercase; color: rgba(180,160,150,0.7);
+            border: 1px solid rgba(160,30,30,0.5); padding: 0.7rem 2rem;
             text-decoration: none; transition: all 0.3s ease;
-            animation: fadeIn 1s ease-out 1.7s both; position: relative; overflow: hidden;
+            position: relative; overflow: hidden; font-family: 'Special Elite', monospace;
+            background: transparent;
         }
-        .cta::before {
+        .cta::before, .cta-primary::before {
             content: ''; position: absolute; inset: 0;
             background: linear-gradient(90deg, transparent, rgba(139,0,0,0.1), transparent);
             transform: translateX(-100%); transition: transform 0.5s ease;
         }
-        .cta:hover {
-            color: var(--blood); border-color: var(--blood);
-            box-shadow: 0 0 25px rgba(139,0,0,0.3), inset 0 0 25px rgba(139,0,0,0.05);
-            text-shadow: 0 0 8px rgba(204,0,0,0.5);
+        .cta:hover, .cta-primary:hover {
+            color: #d44;  border-color: #a22;
+            box-shadow: 0 0 20px rgba(139,0,0,0.25), inset 0 0 20px rgba(139,0,0,0.05);
+            text-shadow: 0 0 8px rgba(180,30,30,0.4);
         }
-        .cta:hover::before { transform: translateX(100%); }
+        .cta:hover::before, .cta-primary:hover::before { transform: translateX(100%); }
+        .cta-group { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: fadeIn 1s ease-out 1.7s both; }
+        .announcement {
+            font-family: 'Creepster', cursive;
+            font-size: clamp(1.5rem, 5vw, 2.8rem);
+            color: var(--blood); letter-spacing: 0.08em;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px rgba(204,0,0,0.6), 0 0 30px rgba(139,0,0,0.3);
+            margin: 0.5rem 0;
+            animation: fadeSlideUp 1s ease-out 1s both, textFlicker 8s ease-in-out 5s infinite;
+        }
         .footer {
             position: fixed; bottom: 1.2rem; left: 0; right: 0; text-align: center;
             z-index: 5; font-size: 0.6rem; letter-spacing: 0.15em;
@@ -145,15 +156,20 @@
         <h1 class="title" data-text="Haunt Nights">Haunt Nights</h1>
         <div class="subtitle">Jacksonville, FL</div>
         <div class="divider"></div>
+        <div class="announcement">Not April Fools — We're Back.</div>
+        <div class="divider"></div>
         <p class="message">
             We're building something <strong>terrifying</strong>.<br>
             New scares. New nightmares.<br>
             <strong>Coming Soon.</strong>
         </p>
-        <a href="mailto:contact@hauntnightsjax.com" class="cta">Stay in the dark →</a>
+        <div class="cta-group">
+            <a href="mailto:contact@hauntnightsjax.com" class="cta">Contact Us →</a>
+            <a href="https://form.jotform.com/260156163701146" target="_blank" class="cta-primary">Join the Mailing List</a>
+        </div>
     </main>
     <footer class="footer">hauntnightsjax.com</footer>
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         const particles = document.getElementById('particles');
         for (let i = 0; i < 25; i++) {
             const p = document.createElement('div');
@@ -174,9 +190,4 @@
         for (let i = 0; i < 12; i++) {
             const s = document.createElement('div');
             s.className = 'scratch';
-            s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;height:${30+Math.random()*80}px;transform:rotate(${-20+Math.random()*40}deg);`;
-            scratchContainer.appendChild(s);
-        }
-    </script>
-</body>
-</html>
+            s.style.cssText = `left:${Math.random()*100}%;top:${Math.random()*100}%;height:$
