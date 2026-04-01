@@ -61,7 +61,7 @@
             text-shadow: 0 0 10px rgba(204,0,0,0.8), 0 0 40px rgba(139,0,0,0.6),
                 0 0 80px rgba(139,0,0,0.3), 0 0 120px rgba(139,0,0,0.15),
                 3px 3px 0 #220000, -1px -1px 0 #440000;
-            margin-bottom: 0.2rem; position: relative;
+            margin-bottom: 0.2rem; position: relative; white-space: nowrap;
             animation: fadeSlideUp 1s ease-out 0.4s both, textFlicker 8s ease-in-out 3s infinite;
         }
         .title::before, .title::after {
@@ -142,6 +142,7 @@
         @keyframes fadeIn { from{opacity:0} to{opacity:1} }
         @media (max-width: 480px) {
             .tape { padding: 0.3rem 1rem; font-size: 0.6rem; }
+            .title { white-space: normal; }
             .message { padding: 0 1rem; }
         }
     </style>
