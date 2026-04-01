@@ -45,7 +45,7 @@
             animation: hellpulse 6s ease-in-out infinite;
         }
         @keyframes hellpulse { 0%,100%{opacity:.5} 50%{opacity:1} }
-        .content { position: relative; z-index: 5; text-align: center; padding: 2rem; max-width: 750px; }
+        .content { position: relative; z-index: 5; text-align: center; padding: 2rem; max-width: 750px; overflow-wrap: break-word; }
         .tape {
             display: inline-block;
             background: repeating-linear-gradient(-45deg, #111, #111 10px, #b8960a 10px, #b8960a 20px);
@@ -143,8 +143,9 @@
         @keyframes fadeIn { from{opacity:0} to{opacity:1} }
         @media (max-width: 480px) {
             .tape { padding: 0.3rem 1rem; font-size: 0.6rem; }
-            .title { width: auto; }
+            .title { width: auto; font-size: clamp(4rem, 18vw, 6rem); line-height: 0.95; }
             .message { padding: 0 1rem; }
+            .announcement { padding: 0 1rem; font-size: clamp(1.2rem, 4.5vw, 2rem); }
         }
     </style>
 </head>
